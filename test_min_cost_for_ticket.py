@@ -23,10 +23,7 @@ def min_cost_ticket(days: list[int]) -> int:
     return 0
   cost = COSTS[0] * n
   if cost > COSTS[1]:
-    if n<=7:
-      return COSTS[1]
-    else:
-      return COSTS[1] + min_cost_ticket(remove_days_up_to(days, 7))
+    return COSTS[1] + min_cost_ticket(remove_days_up_to(days, 7))
   
   return cost
 
@@ -77,7 +74,7 @@ def test_min_cost_7_consecutif_days():
 def test_min_cost_8_consecutif_days():
   assert min_cost_ticket([1, 2, 3, 4, 5, 6, 7, 8])==9 #7 + 2
 
-def hid_test_min_cost_2_one_week_ranges():
+def test_min_cost_2_consecutif_weeks_ranges():
   """
   [1,2,3,6,7] => 7$
   [8]       => 2$
