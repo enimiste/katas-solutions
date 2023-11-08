@@ -7,15 +7,16 @@ Note that different sequences are counted as different
 combinations.
 """
 def combinations(nums: list[int], target: int) -> int:
-  if target==0:
+  if target<=0:
     return 0
   if len(nums)==1:
     return 1 if target%nums[0]==0 else 0
   if len(nums)>=2:
     case1 = combinations([nums[0]], target)
     case2 = combinations(nums[1:], target-nums[0])
-    case3 = combinations(nums[1:], target)
-    return  case1 + case2 + case3
+    case3 = combinations(nums, target-nums[0])
+    case4 = combinations(nums[1:], target)
+    return  case1 + case2 + case3 + case4
   
   return 0
 
