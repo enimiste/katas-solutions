@@ -10,8 +10,7 @@ def combinations(nums: list[int], target: int) -> int:
   if target==0:
     return 0
   if len(nums)==1:
-    return 1 if target==nums[0] else 0
-  # TODO
+    return 1 if target%nums[0]==0 else 0
   return 0
 
 # tests
