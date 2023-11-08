@@ -52,10 +52,10 @@ def test_coins_changes_1_coins_array_amount_less():
 def test_coins_changes_2_coins_array_no_combinations():
   assert fewest_nbr_coins([3, 5], 7)==-1
 
-def hid_test_coins_changes_amount_ok():
+def test_coins_changes_amount_ok():
   nbr_coins = fewest_nbr_coins([1,2,5], 11)
   assert nbr_coins==3
 
-def hid_test_coins_changes_amount_ko():
+def test_coins_changes_amount_ko():
   nbr_coins = fewest_nbr_coins([2], 3)
   assert nbr_coins==-1
