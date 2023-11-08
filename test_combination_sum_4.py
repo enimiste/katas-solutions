@@ -11,14 +11,12 @@ def combinations(nums: list[int], target: int) -> int:
     return 0
   if len(nums)==1:
     return 1 if target%nums[0]==0 else 0
-  if len(nums)>=2:
-    case1 = combinations([nums[0]], target)
-    case2 = combinations(nums[1:], target-nums[0])
-    case3 = combinations(nums, target-nums[0])
-    case4 = combinations(nums[1:], target)
-    return  case1 + case2 + case3 + case4
-  
-  return 0
+  case1 = combinations([nums[0]], target)
+  case2 = combinations(nums[1:], target-nums[0])
+  case3 = combinations(nums, target-nums[0])
+  case4 = combinations(nums[1:], target)
+  return  case1 + case2 + case3 + case4
+  # TODO : ignore order
 
 # tests
 def test_dummy():
@@ -37,7 +35,7 @@ def test_combinations_1_elem_lt_target():
   assert combinations([1], 2)==1
 
 def test_combinations_2_elem():
-  assert combinations([1, 2], 3)>=2 #3
+  assert combinations([1, 2], 3)==3
 
 def test_combinations_2_elem_ko():
   assert combinations([2, 4], 5)==0
@@ -46,7 +44,7 @@ def test_combinations_2_elem_ko():
   assert combinations([2, 4], 5)==0
 
 def test_combinations_3_elem_lt_target():
-  assert combinations([1,2,3], 4)>=4 #7
+  assert combinations([1,2,3], 4)==7
 
 def test_combinations_1_elem_lt_target():
   assert combinations([1], 2)==1
