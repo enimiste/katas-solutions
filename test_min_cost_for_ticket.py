@@ -19,18 +19,42 @@ dollars you need to travel every day in the given list of days.
 COSTS = [2,7,15]
 def min_cost_ticket(days: list[int]) -> int:
   n = len(days)
+  if n==0:
+    return 0
   cost = COSTS[0] * n
-  if cost>COSTS[1]:
+  if cost > COSTS[1]:
     if n<=7:
       return COSTS[1]
     else:
-      return COSTS[2]
+      return COSTS[1] + min_cost_ticket(remove_days_up_to(days, 7))
   
   return cost
+
+def remove_days_up_to(days: list[int], up_to: int) -> list[int]:
+  if len(days)==0:
+    return []
+  first = days[0]
+  while len(days)>0 and (days[0]-first<up_to):
+    days = days[1:]
+  return days
 
 # tests :
 def test_dummy():
   assert True
+
+def test_remove_days_up_to_empty_days_array():
+  assert remove_days_up_to([], 7)==[]
+
+def test_remove_days_up_to_7_days_array():
+  assert remove_days_up_to([1, 6], 7)==[]
+  assert remove_days_up_to([1, 7], 7)==[]
+
+def test_remove_days_up_to_8_days_array():
+  assert remove_days_up_to([1, 7, 8], 7)==[8]
+  assert remove_days_up_to([1, 6, 8], 7)==[8]
+
+def test_min_cost_0_day():
+  assert min_cost_ticket([])==0
 
 def test_min_cost_1_day():
   assert min_cost_ticket([1])==2
@@ -52,6 +76,15 @@ def test_min_cost_7_consecutif_days():
 
 def test_min_cost_8_consecutif_days():
   assert min_cost_ticket([1, 2, 3, 4, 5, 6, 7, 8])==9 #7 + 2
+
+def hid_test_min_cost_2_one_week_ranges():
+  """
+  [1,2,3,6,7] => 7$
+  [8]       => 2$
+  ==============
+            => 11$
+  """
+  assert min_cost_ticket([1, 2, 3, 6, 7, 8])==9 #7 + 2
 
 def hid_test_min_costs():
   """
