@@ -12,11 +12,6 @@ Note that the grouping (1 11 06) is invalid because "06" cannot
 be mapped into 'F' since "6" is different from "06". Given a string 
 s containing only digits, return the number of ways to decode 
 it.
-{'1': 'A', '2': 'B', '3': 'C', '4': 'D', '5': 'E', '6': 'F', 
-'7': 'G', '8': 'H', '9': 'I', '10': 'J', '11': 'K', '12': 'L', 
-'13': 'M', '14': 'N', '15': 'O', '16': 'P', '17': 'Q', '18': 'R', 
-'19': 'S', '20': 'T', '21': 'U', '22': 'V', '23': 'W', '24': 'X', 
-'25': 'Y', '26': 'Z'}
 
 """
 ALPH = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
@@ -24,27 +19,26 @@ ALPH = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 MAP = dict([ (str(i), a) for i, a in zip(range(1, 27), ALPH)])
 
 def decode_nbr_ways(s: str) -> int:
-  return decode_nbr_ways_helper(s, 0)
-
-def decode_nbr_ways_helper(s: str, nbr: int) -> int :
   if len(s)==0:
-    return nbr
+    return 1
   if len(s)==1:
-    return (1 + nbr) if s in MAP else 0
-  # TODO
-  x, y = 0, 0
-  if s[0] in MAP:
-    x = decode_nbr_ways_helper(s[1:], ???)
-  if s[0:2] in MAP:
-    y = decode_nbr_ways_helper(s[2:], ???)
-  return x+y
+    return 1 if s in MAP else 0
+  
+  if len(s)>=2:
+    nbr=0
+    if s[0] in MAP:
+      nbr+=decode_nbr_ways(s[1:])
+    if s[0:2] in MAP:
+      nbr+=decode_nbr_ways(s[2:])
+    return nbr
+  return -1
 
 # tests :
 def test_dummy():
   assert True
 
 def test_decode_empty_string():
-  assert decode_nbr_ways('')==0
+  assert decode_nbr_ways('')==1
 
 def test_decode_1_digit_string_less_1():
   assert decode_nbr_ways('0')==0
@@ -73,7 +67,20 @@ def test_decode_3_digits_string_ok():
   """
   assert decode_nbr_ways('123')==3
 
-def test_decode_5_digits_string_ko():
-  assert decode_nbr_ways('11106')==0
+def test_decode_4_digits_string_ok():
+  """
+  ABBC
+  ABW
+  LW
+  LBC
+  AVC
+  """
+  assert decode_nbr_ways('1223')==5
 
+def test_decode_5_digits_string_ko():
+  """
+  AAJF
+  KJF
+  """
+  assert decode_nbr_ways('11106')==2
 
