@@ -77,13 +77,27 @@ def test_min_cost_8_consecutif_days():
 def test_min_cost_2_consecutif_weeks_ranges():
   """
   [1,2,3,6,7] => 7$
-  [8]       => 2$
-  ==============
-            => 11$
+  [8]         => 2$
   """
   assert min_cost_ticket([1, 2, 3, 6, 7, 8])==9 #7 + 2
 
-def hid_test_min_costs():
+def test_min_cost_3_consecutif_weeks_ranges():
+  """
+  [1,2,3,6,7]   => 7$
+  [8,9,10, 11]  => 7$
+  [15]          => 2$
+  """
+  assert min_cost_ticket([1, 2, 3, 6, 7, 8, 9, 10, 11, 15])==16 #7 + 7 + 2
+
+def test_min_cost_1_week_then_1_day_per_week_case_1():
+  """
+  [1,2,3,6,7] => 7$
+  [8]         => 2$
+  [15]        => 2$
+  """
+  assert min_cost_ticket([1, 2, 3, 6, 7, 8, 15])==11 #7 + 2 + 2
+
+def test_min_cost_1_week_then_1_day_per_week_case_2():
   """
   [1,4,6,7] => 7$
   [8]       => 2$
