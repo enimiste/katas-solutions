@@ -82,15 +82,23 @@ def test_min_cost_2_consecutif_weeks_ranges():
   [1,2,3,6,7] => 7$
   [8]         => 2$
   """
-  assert min_cost_ticket([1, 2, 3, 6, 7, 8])==9 #7 + 2
+  assert min_cost_ticket([1, 2, 3, 6, 7, 8])==9
 
-def hid_test_min_cost_3_consecutif_weeks_ranges():
+def test_min_cost_3_consecutif_weeks_ranges():
   """
   [1,2,3,6,7]   => 7$
   [8,9,10, 11]  => 7$
-  [15]          => 2$
+  [15, 16]      => 4$
   """
-  assert min_cost_ticket([1, 2, 3, 6, 7, 8, 9, 10, 11, 15])==16 #7 + 7 + 2
+  assert min_cost_ticket([1, 2, 3, 6, 7, 8, 9, 10, 11, 15, 16])==15
+
+def test_min_cost_3_weeks_ranges():
+  """
+  [1,2,3,6,7]   => 7$
+  [8,9,10, 11]  => 7$
+  [33, 34]      => 4$
+  """
+  assert min_cost_ticket([1, 2, 3, 6, 7, 8, 9, 10, 11, 33, 34])==18
 
 def test_min_cost_1_week_then_1_day_per_week_case_1():
   """
@@ -98,7 +106,7 @@ def test_min_cost_1_week_then_1_day_per_week_case_1():
   [8]         => 2$
   [15]        => 2$
   """
-  assert min_cost_ticket([1, 2, 3, 6, 7, 8, 15])==11 #7 + 2 + 2
+  assert min_cost_ticket([1, 2, 3, 6, 7, 8, 15])==11
 
 def test_min_cost_1_week_then_1_day_per_week_case_2():
   """
