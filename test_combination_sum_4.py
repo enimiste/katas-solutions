@@ -35,6 +35,11 @@ def test_combinations_1_elem_lt_target():
   assert combinations([1], 2)==1
 
 def test_combinations_2_elem():
+  """
+  (1,1,1)
+  (1,2)
+  (2,1)
+  """
   assert combinations([1, 2], 3)==3
 
 def test_combinations_2_elem_ko():
@@ -44,6 +49,15 @@ def test_combinations_2_elem_ko():
   assert combinations([2, 4], 5)==0
 
 def test_combinations_3_elem_lt_target():
+  """
+  (1,1,1,1)
+  (1,1,2)
+  (1,3)
+  (1,2,1)
+  (3,1)
+  (2,1,1)
+  (2,2)
+  """
   assert combinations([1,2,3], 4)==7
 
 def test_combinations_1_elem_lt_target():
