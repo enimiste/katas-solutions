@@ -14,7 +14,7 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - ✅ Min cost for tickets
 - ✅ Combination Sum 4 (generates combinations)
 - ✅ Combination Sum 4 (counts combinations)
-- Delete and Earn
+- ✅ Delete and Earn
 - Unique Paths
 - Unique Paths 2
 - Minimum Path Sum
