@@ -77,3 +77,24 @@ def test_combinations_3_elem_lt_target():
 
 
 
+def test_combinations_3_elem_caseA():
+  """
+  (2,2,3)
+  (2,3,2)
+  (3,2,2)
+  (7)
+  """
+  assert combinations([2,3,6,7], 7)==4
+
+
+def test_combinations_3_elem_caseB():
+  """
+  (2,2,2,2)
+  (2,3,3)
+  (3,2,3)
+  (3,3,2)
+  (3,5)
+  (5,3)
+  """
+  assert combinations([2,3,5], 8)==6
+
