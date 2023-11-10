@@ -31,7 +31,7 @@ class  MyHandler(FileSystemEventHandler):
                 dir = path.dirname(dir_or_file_path)
             os.chdir(dir)
             os.system('pwd')
-            os.system('pytest --cov ' + dir_or_file_path)
+            os.system("pytest {} --cov".format(dir_or_file_path))
             print("Working dir : " + dir)
             print("Watching for test files changes ...")
             print('Type <Ctrl+C> to stop the watcher')
