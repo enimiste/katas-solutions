@@ -18,7 +18,7 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - ✅ Unique Paths
 - ✅ Unique Paths 2
 - ✅ Minimum Path Sum
-- Triangle
+- ✅ Triangle
 - Minimum Falling Path Sum
 - Maximal Square
 - Number of increasing paths
