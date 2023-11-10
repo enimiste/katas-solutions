@@ -19,7 +19,7 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - ✅ Unique Paths 2
 - ✅ Minimum Path Sum
 - ✅ Triangle
-- Minimum Falling Path Sum
+- ✅ Minimum Falling Path Sum
 - Maximal Square
 - Number of increasing paths
 - Longest Common Subsequence
