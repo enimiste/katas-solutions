@@ -1,7 +1,7 @@
 # Master Dynamic Programming in just 12 days katas solutions
 
 You found in this repository my solutions of the the document `problems_.pdf` katas using TDD (baby steps)
-## Problem list (✅ solved, ❌ not solved) :
+## Problem list (✅ solved, ❌ not solved) : 42
 - ✅ Fibonacci Number
 - ✅ Climbing Stairs
 - ✅ House Robber
@@ -17,7 +17,7 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - ✅ Delete and Earn
 - ✅ Unique Paths
 - ✅ Unique Paths 2
-- Minimum Path Sum
+- ✅ Minimum Path Sum
 - Triangle
 - Minimum Falling Path Sum
 - Maximal Square
