@@ -13,7 +13,12 @@ Requirements :
 - pytest-cov==4.1.0
 - watchdog==3.0.0
 
-Usage : python watch_tests.py [path/to/tests/files/folder]
+Usage : 
+> python watch_tests.py path/to/tests/files/folder
+
+or, to clear the screan each time
+
+> python watch_tests.py path/to/tests/files/folder --cls
 """
 
 class  MyHandler(FileSystemEventHandler):
@@ -24,13 +29,16 @@ class  MyHandler(FileSystemEventHandler):
         if re.match('.*/test_(.*)\.py', event.src_path):
             self.has_changes = True
 
-    def run_tests(self, dir_or_file_path):
+    def run_tests(self, dir_or_file_path: str, clear_screen: bool=False):
         if self.has_changes:
             dir = dir_or_file_path
             if path.isfile(dir_or_file_path):
                 dir = path.dirname(dir_or_file_path)
             os.chdir(dir)
             os.system('pwd')
+            if clear_screen:
+                os.system('clear')
+
             os.system("pytest {} --cov".format(dir_or_file_path))
             print("Working dir : " + dir)
             print("Watching for test files changes ...")
@@ -61,7 +69,7 @@ if __name__=="__main__":
 
     try:
         while  True:
-            event_handler.run_tests(dir_or_file_path)
+            event_handler.run_tests(dir_or_file_path, '--cls' in sys.argv[1:])
             time.sleep(1)
     except  KeyboardInterrupt:
         observer.stop()
