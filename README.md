@@ -16,7 +16,7 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - ✅ Combination Sum 4 (counts combinations)
 - ✅ Delete and Earn
 - ✅ Unique Paths
-- Unique Paths 2
+- ✅ Unique Paths 2
 - Minimum Path Sum
 - Triangle
 - Minimum Falling Path Sum
