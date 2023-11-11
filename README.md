@@ -20,7 +20,7 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - ✅ Minimum Path Sum
 - ✅ Triangle
 - ✅ Minimum Falling Path Sum
-- Maximal Square
+- ✅ Maximal Square
 - Number of increasing paths
 - Longest Common Subsequence
 - Longest Palindromic Subsequence
