@@ -46,6 +46,11 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - Burst Balloons
 - Scramble String
 
+## Google 15 interview questions (✅ solved, ❌ not solved) :
+- ...
+- ✅ Find all paths for a sum
+- ...
+
 ## Requirements :
 ```shell
 python -m venv .env
