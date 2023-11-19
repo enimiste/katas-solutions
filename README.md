@@ -47,9 +47,21 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - Scramble String
 
 ## Google 15 interview questions (✅ solved, ❌ not solved) :
-- ...
+- Find the kth largest element in a number stream
+- Find ‘k’ closest numbers
+- Delete node with given key
+- Copy linked list with arbitrary pointer
+- Mirror binary trees
 - ✅ Find all paths for a sum
-- ...
+- Longest substring with no more than ‘k’ distinct characters
+- Longest substring with no repeating characters
+- Equal subset sum partition
+- Determine if the number is valid
+- Print balanced brace combinations
+- Given a number of tasks, determine if they can all be scheduled
+- Implement a LRU cache
+- Find the high and low index
+- Merge overlapping intervals
 
 ## Requirements :
 ```shell
