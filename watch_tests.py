@@ -39,7 +39,7 @@ class  MyHandler(FileSystemEventHandler):
             if clear_screen:
                 os.system('clear')
 
-            os.system("pytest {} --cov".format(dir_or_file_path))
+            os.system("pytest {} --cov -v".format(dir_or_file_path))
             print("Working dir : " + dir)
             print("Watching for test files changes ...")
             print('Type <Ctrl+C> to stop the watcher')
