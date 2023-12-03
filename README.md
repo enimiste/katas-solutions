@@ -1,7 +1,9 @@
 # Master Dynamic Programming in just 12 days katas solutions
 
-You found in this repository my solutions of the the document `problems_.pdf` katas using TDD (baby steps)
+You found in this repository my solutions.
 ## Problem list (✅ solved, ❌ not solved) : 42
+Document `problems_.pdf` katas using TDD (baby steps)
+
 - ✅ Fibonacci Number
 - ✅ Climbing Stairs
 - ✅ House Robber
@@ -47,6 +49,8 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - Scramble String
 
 ## Google 15 interview questions (✅ solved, ❌ not solved) :
+Document `google-15-interview-questions_.pdf` katas using TDD (baby steps)
+
 - Find the kth largest element in a number stream
 - Find ‘k’ closest numbers
 - Delete node with given key
@@ -63,10 +67,14 @@ You found in this repository my solutions of the the document `problems_.pdf` ka
 - Find the high and low index
 - Merge overlapping intervals
 
+## Codingame interview questions (✅ solved, ❌ not solved) :
+
+- Wooden Toys
+
 ## Requirements :
 ```shell
 python -m venv .env
-source .env/bin/activate
+# source .env/bin/activate
 pip install pytest
 
 python pytest
